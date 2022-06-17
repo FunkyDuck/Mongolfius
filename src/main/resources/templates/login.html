@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments/common/header :: header}"></head>
+
+<body>
+<nav th:replace="~{fragments/common/navigation :: generic}"></nav>
+
+<main>
+    <form action="#" th:action="@{/login}" method="post" th:with="error = ${#request.getParameter('error')}">
+        <h1>Mongolfius • Login</h1>
+
+        <div th:if="${error}">Erreur durant l'authentification...</div>
+
+        <div>
+            <label for="in-username">Email </label>
+            <input type="text" name="username" id="in-username">
+        </div>
+
+        <div>
+            <label for="in-password">Mot de passe </label>
+            <input type="password" name="password" id="in-password">
+        </div>
+
+        <button type="submit">Connexion ►</button>
+
+        <div>
+            Pas de compte ?<br>
+            <a href="/register">En créer un</a>
+        </div>
+    </form>
+</main>
+</body>
+</html>

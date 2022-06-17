@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments/common/header :: header}"></head>
+
+<body>
+
+<nav th:replace="~{fragments/common/navigation :: generic}"></nav>
+
+<main>
+    <h1>Welcome to Mongolfius :: <span th:text="${auth.getFirstName}">USER</span></h1>
+</main>
+
+</body>
+</html>

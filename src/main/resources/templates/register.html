@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments/common/header :: header}"></head>
+
+<body>
+<nav th:replace="~{fragments/common/navigation :: generic}"></nav>
+
+<main>
+    <form action="#" th:action="@{/register}" method="post" th:with="error = ${#request.getParameter('error')}">
+        <h1>Mongolfius • Inscription</h1>
+
+        <div th:if="${error}">Erreur durant l'inscription...</div>
+
+        <div>
+            <label for="in-username">Email </label>
+            <input type="text" name="username" id="in-username">
+        </div>
+
+        <div>
+            <label for="in-password">Mot de passe </label>
+            <input type="password" name="password" id="in-password">
+        </div>
+
+        <div>
+            <label for="in-firstName">Prénom </label>
+            <input type="text" name="firstName" id="in-firstName">
+        </div>
+
+        <div>
+            <label for="in-lastName">Nom </label>
+            <input type="text" name="lastName" id="in-lastName">
+        </div>
+
+        <div>
+            <label for="in-birthDate">Date de naissance </label>
+            <input type="date" name="birthDate" id="in-birthDate">
+        </div>
+
+        <button type="submit">Connexion ►</button>
+
+        <div>
+            Vous avez déjà un compte ?<br>
+            <a href="/login">S'inscrire'</a>
+        </div>
+    </form>
+</main>
+</body>
+</html>
